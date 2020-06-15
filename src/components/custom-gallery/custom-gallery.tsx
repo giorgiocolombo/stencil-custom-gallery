@@ -103,8 +103,8 @@ export class CustomGallery implements ComponentInterface {
       let carouselClone = [];
       carousel.querySelectorAll("img").forEach((immagine, index) => {
         carouselClone.push(immagine);
-
         immagine.addEventListener("click", () => {
+          document.body.style.overflow = "hidden";
           if (this.autoscroll === true) {
             clearInterval(intervallo);
           }
@@ -161,6 +161,7 @@ export class CustomGallery implements ComponentInterface {
           });
           carouselContainer.appendChild(opacity);
           closefullscreen.addEventListener("click", () => {
+            document.body.style.overflow = "visible";
             opacity.parentNode.removeChild(opacity);
           });
         });
