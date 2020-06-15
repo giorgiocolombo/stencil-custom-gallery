@@ -99,6 +99,20 @@ export class CustomGallery implements ComponentInterface {
     });
 
     // Click for fullscreen img
+    const checkButtons = (
+      index: number,
+      next: HTMLImageElement,
+      carouselClone: string | any[],
+      prev: HTMLImageElement
+    ) => {
+      index >= carouselClone.length - 1
+        ? (next.style.display = "none")
+        : (next.style.display = "block");
+
+      index <= 0
+        ? (prev.style.display = "none")
+        : (prev.style.display = "block");
+    };
     if (this.clickableImg === true) {
       let carouselClone = [];
       carousel.querySelectorAll("img").forEach((immagine, index) => {
@@ -137,11 +151,14 @@ export class CustomGallery implements ComponentInterface {
           next.addEventListener("click", () => {
             immagineclone.src = carouselClone[index + 1].src;
             index++;
+            checkButtons(index, next, carouselClone, prev);
           });
           prev.addEventListener("click", () => {
             immagineclone.src = carouselClone[index - 1].src;
             index--;
+            checkButtons(index, next, carouselClone, prev);
           });
+          checkButtons(index, next, carouselClone, prev);
           if (this.keydownscroll === true) {
             document.addEventListener("keydown", (evt) => {
               if (evt.keyCode === 39) {

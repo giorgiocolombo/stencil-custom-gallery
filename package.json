@@ -1,6 +1,6 @@
 {
   "name": "stencil-custom-gallery",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A stencil custom element that allow user to simply add a customizable image gallery",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
