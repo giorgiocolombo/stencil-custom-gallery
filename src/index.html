@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="it">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
+    />
+    <title>Stencil Component Starter</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      custom-gallery {
+        width: 100%;
+        height: 100vh;
+      }
+    </style>
+
+    <script type="module" src="/build/custom-gallery.esm.js"></script>
+    <script nomodule src="/build/custom-gallery.js"></script>
+  </head>
+  <body>
+    <custom-gallery
+      arrows-show="true"
+      arrows-position="inner"
+      autoscroll="true"
+      autoscroll-delay-seconds="3"
+      keydownscroll="true"
+      clickable-img="true"
+      infinite-Scroll="false"
+      caption="false"
+      grid="false"
+      grid-autoheight="false"
+      img-fit="cover"
+    >
+      <img src="https://source.unsplash.com/random?forest" alt="Forest" />
+      <img src="https://source.unsplash.com/random?street" alt="Street" />
+      <img src="https://source.unsplash.com/random?coding" alt="Coding" />
+      <img src="https://source.unsplash.com/random?vertical" alt="Vertical" />
+      <img src="https://source.unsplash.com/random?urban" alt="Urban" />
+      <img src="https://source.unsplash.com/random?wood" alt="Wood" />
+      <img src="https://source.unsplash.com/random?sea" alt="Sea" />
+      <img src="https://source.unsplash.com/random?sunset" alt="Sunset" />
+      <img src="https://source.unsplash.com/random?beach" alt="Beach" />
+      <img src="https://source.unsplash.com/random?winter" alt="Winter" />
+      <img src="https://source.unsplash.com/random?netflix" alt="Netflix" />
+      <img src="https://source.unsplash.com/random?sahara" alt="Sahara" />
+    </custom-gallery>
+  </body>
+</html>

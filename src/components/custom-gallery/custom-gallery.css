@@ -1,0 +1,186 @@
+:host {
+  display: block;
+  position: relative;
+  margin: auto !important;
+  width: 80%;
+  height: 100%;
+}
+
+.carousel__container {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  margin: auto;
+  position: relative;
+}
+.carousel {
+  height: 100%;
+  display: flex;
+  transition: transform 0.4s;
+}
+.carousel div {
+  width: 100%;
+  height: auto;
+  flex-shrink: 0;
+  background-color: #ddd;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+.carousel div img {
+  object-fit: cover;
+  /* If you don't want image to be bigger than its own width, comment width:100%
+      Gray bars may appear in order to complete the div. The color can be changed in .carousel div  =>    background-color
+  */
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+.carousel div p {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.7);
+  width: 100%;
+  text-align: center;
+  padding: 1.5rem 0;
+  font-weight: bold;
+  margin: 0;
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+}
+.arrowleft {
+  position: absolute;
+  width: 30px;
+  top: calc(50% - 15px);
+  left: -40px;
+  opacity: 0.8;
+  padding: 0.6rem 0.3rem;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  box-sizing: content-box;
+}
+.arrowright {
+  position: absolute;
+  width: 30px;
+  top: calc(50% - 15px);
+  right: -40px;
+  opacity: 0.8;
+  padding: 0.6rem 0.3rem;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  box-sizing: content-box;
+}
+.bullet__container {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  width: 100%;
+}
+.bullet {
+  width: 6px;
+  height: 6px;
+  border-radius: 100%;
+  background-color: #000;
+  margin: 0.8rem 0.8rem;
+  opacity: 0.5;
+}
+.fullscreen__opacity {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(000, 000, 000, 0.9);
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+.img__fulscreen {
+  z-index: 1;
+}
+.img__horizontal {
+  max-width: 100%;
+  height: auto;
+}
+.img__vertical {
+  max-height: 100%;
+  width: auto;
+}
+.close__fullscreen {
+  z-index: 2;
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  width: 20px;
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 0.5rem;
+  box-sizing: content-box;
+  border-radius: 100%;
+}
+.carousel_grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-rows: repeat(auto-fit, minmax(100px, 1fr));
+  transition: transform 0.4s;
+}
+.carousel_grid div img {
+  object-fit: cover;
+  width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+@media (max-width: 768px) {
+  .carousel_grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    transition: transform 0.4s;
+  }
+  .carousel div p {
+    padding: 0.5rem 0;
+  }
+}
+@media (max-width: 375px) {
+  .carousel_grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    transition: transform 0.4s;
+  }
+}
+
+.prev_clicked {
+  background-color: #fff;
+  border-radius: 100%;
+  padding: 0.8rem;
+  position: absolute;
+  left: 2rem;
+  width: 20px;
+  opacity: 0.8;
+}
+.next_clicked {
+  padding: 0.8rem;
+  background-color: #fff;
+  border-radius: 100%;
+  position: absolute;
+  right: 2rem;
+  width: 20px;
+  opacity: 0.8;
+}
+
+@media (max-width: 500px) {
+  .prev_clicked {
+    left: -10px;
+  }
+  .next_clicked {
+    right: -10px;
+  }
+}
