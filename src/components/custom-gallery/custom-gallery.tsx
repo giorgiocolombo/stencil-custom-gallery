@@ -13,7 +13,6 @@ import Hammer from "hammerjs";
   tag: "custom-gallery",
   styleUrl: "custom-gallery.css",
   shadow: true,
-  assetsDirs: ["/assets"],
 })
 export class CustomGallery implements ComponentInterface {
   @Element() el: HTMLElement;
@@ -117,7 +116,9 @@ export class CustomGallery implements ComponentInterface {
       carousel.querySelectorAll("img").forEach((immagine, index) => {
         carouselClone.push(immagine);
         immagine.addEventListener("click", () => {
+          this.el.style.zIndex = "99999";
           document.body.style.overflow = "hidden";
+
           if (this.autoscroll === true) {
             clearInterval(intervallo);
           }
@@ -177,6 +178,7 @@ export class CustomGallery implements ComponentInterface {
           });
           carouselContainer.appendChild(opacity);
           closefullscreen.addEventListener("click", () => {
+            this.el.style.zIndex = "auto";
             document.body.style.overflow = "visible";
             opacity.parentNode.removeChild(opacity);
           });
