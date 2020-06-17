@@ -5,10 +5,9 @@ import {
   h,
   Prop,
   Element,
-  getAssetPath,
 } from "@stencil/core";
 
-import Hammer from "../../../node_modules/hammerjs/hammer.min.js";
+import Hammer from "hammerjs";
 
 @Component({
   tag: "custom-gallery",
@@ -126,7 +125,7 @@ export class CustomGallery implements ComponentInterface {
           const immagineclone = immagine.cloneNode() as HTMLImageElement;
           const opacity = document.createElement("div");
           const closefullscreen = document.createElement("img");
-          closefullscreen.src = `${getAssetPath("/assets/close.svg")}`;
+          closefullscreen.src = `https://image.flaticon.com/icons/svg/748/748122.svg`;
           closefullscreen.className = "close__fullscreen";
           opacity.className = "fullscreen__opacity";
           opacity.style.backgroundColor = "fullscreen__opacity";
@@ -140,10 +139,10 @@ export class CustomGallery implements ComponentInterface {
           opacity.appendChild(closefullscreen);
           const next = document.createElement("img");
           const prev = document.createElement("img");
-          prev.src = `${getAssetPath("/assets/back.svg")}`;
+          prev.src = `https://image.flaticon.com/icons/svg/126/126492.svg`;
           prev.alt = "Left Arrow";
           prev.className = "prev_clicked";
-          next.src = `${getAssetPath("/assets/next.svg")}`;
+          next.src = `https://image.flaticon.com/icons/svg/126/126490.svg`;
           next.alt = "Right Arrow";
           next.className = "next_clicked";
           opacity.appendChild(prev);
@@ -323,12 +322,12 @@ export class CustomGallery implements ComponentInterface {
         </div>
         <img
           class="arrowleft"
-          src={getAssetPath("/assets/back.svg")}
+          src="https://image.flaticon.com/icons/svg/126/126492.svg"
           alt="Left arrow"
         />
         <img
           class="arrowright"
-          src={getAssetPath("/assets/next.svg")}
+          src="https://image.flaticon.com/icons/svg/126/126490.svg"
           alt="Right arrow"
         />
       </Host>
